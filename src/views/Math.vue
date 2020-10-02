@@ -4,11 +4,13 @@
     <form action="" name="form">
       <input type="tel" class="risoku" v-model.number="answer">
     </form>
-    <button class="mbtn">計算</button>
+    <button class="mbtn" @click="testNum">計算</button>
     <p>{{answer | addComma}}</p>
     <p>{{resultNum | addComma}}</p>
-    <p></p>
-    <p></p>
+    <p>{{num | addComma}}</p>
+    <p>{{num2 | addComma}}</p>
+    <p>{{answer | number_format}}</p>
+    <p>{{num2 | number_format}}</p>
     <p></p>
   </div>
 </template>
@@ -19,6 +21,8 @@ export default {
   data (){
     return{
       answer: '',
+      num: 1000000,
+      num2:''
     }
   },
   filters:{
@@ -29,6 +33,11 @@ export default {
   computed:{
     resultNum:function(){
       return this.answer / 2
+    }
+  },
+  methods:{
+    testNum:function(){
+      this.num2 = this.answer / 2
     }
   }
 }
