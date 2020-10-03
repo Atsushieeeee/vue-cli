@@ -5,13 +5,13 @@
       <input type="tel" class="risoku" v-model.number="answer">
     </form>
     <button class="mbtn" @click="testNum">計算</button>
-    <p>{{answer | addComma}}</p>
-    <p>{{resultNum | addComma}}</p>
-    <p>{{num | addComma}}</p>
+    <!-- <p>{{answer | addComma}}</p>
+    <p style="color:purple">{{resultNum | addComma}}</p>
+    <p style="color:skyblue">{{num | addComma}}</p>
     <p style="color:green">{{num2 | addComma}}</p>
-    <p style="color:blue">{{answer | number_format}}</p>
-    <p style="color:red">{{num2 | number_format}}</p>
-    <p style="color:orange">{{num2 | number_format}}</p>
+    <p style="color:blue">{{answer | number_format}}</p> -->
+    <p style="color:red" v-show="show">{{num2 | number_format}}</p>
+
     <p></p>
   </div>
 </template>
@@ -23,7 +23,8 @@ export default {
     return{
       answer: '',
       num: 1000000,
-      num2:''
+      num2:'',
+      show:false
     }
   },
   filters:{
@@ -38,7 +39,8 @@ export default {
   },
   methods:{
     testNum:function(){
-      this.num2 = this.answer / 2
+        this.num2 = this.answer / 2
+        this.show = true
     }
   }
 }
