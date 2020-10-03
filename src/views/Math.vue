@@ -8,9 +8,10 @@
     <p>{{answer | addComma}}</p>
     <p>{{resultNum | addComma}}</p>
     <p>{{num | addComma}}</p>
-    <p>{{num2 | addComma}}</p>
-    <p>{{answer | number_format}}</p>
-    <p>{{num2 | number_format}}</p>
+    <p style="color:green">{{num2 | addComma}}</p>
+    <p style="color:blue">{{answer | number_format}}</p>
+    <p style="color:red">{{num2 | number_format}}</p>
+    <p style="color:orange">{{num2 | number_format}}</p>
     <p></p>
   </div>
 </template>
