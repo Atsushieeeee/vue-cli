@@ -5,6 +5,7 @@
       <input type="tel" class="risoku" v-model.number="answer">
     </form>
     <button class="mbtn" @click="testNum">計算</button>
+    <button class="mbtn" @click="clear">クリア</button>
     <!-- <p>{{answer | addComma}}</p>
     <p style="color:purple">{{resultNum | addComma}}</p>
     <p style="color:skyblue">{{num | addComma}}</p>
@@ -40,6 +41,10 @@ export default {
     testNum:function(){
         this.num2 = this.answer / 2
         this.show = true
+    },
+    clear:function(){
+      this.show = false
+      this.answer = ''
     }
   }
 }
