@@ -10,7 +10,7 @@
     <p style="color:skyblue">{{num | addComma}}</p>
     <p style="color:green">{{num2 | addComma}}</p>
     <p style="color:blue">{{answer | number_format}}</p> -->
-    <p style="color:red" v-show="show">{{num2 | number_format}}</p>
+    <p style="color:red" v-show="show">結果1:{{num2 | number_format}}</p>
 
     <p></p>
   </div>
@@ -22,7 +22,6 @@ export default {
   data (){
     return{
       answer: '',
-      num: 1000000,
       num2:'',
       show:false
     }
@@ -32,11 +31,11 @@ export default {
       return value.toString().replace( /([0-9]+?)(?=(?:[0-9]{3})+$)/g,'$1,')
     }
   },
-  computed:{
-    resultNum:function(){
-      return this.answer / 2
-    }
-  },
+  // computed:{
+  //   resultNum:function(){
+  //     return this.answer / 2
+  //   }
+  // },
   methods:{
     testNum:function(){
         this.num2 = this.answer / 2
