@@ -36,8 +36,8 @@ export default {
   },
   methods:{
     testNum:function(){
-      var val1 = this.answer / 0.84685 * 0.15315;
-      var val2 = val1 * 315/15315 - 0.5;
+      var val1 = Math.floor(this.answer / 0.84685 * 0.15315)
+      var val2 = Math.ceil(val1 * 315/15315 - 0.5)
         this.num1 = val1 + this.answer
         this.num2 = val1 - val2
         this.num3 = val2
