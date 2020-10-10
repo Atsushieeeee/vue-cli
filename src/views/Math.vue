@@ -6,12 +6,11 @@
     </form>
     <button class="mbtn" @click="testNum">計算</button>
     <button class="mbtn" @click="clear">クリア</button>
-    <!-- <p>{{answer | addComma}}</p>
-    <p style="color:purple">{{resultNum | addComma}}</p>
-    <p style="color:skyblue">{{num | addComma}}</p>
-    <p style="color:green">{{num2 | addComma}}</p>
-    <p style="color:blue">{{answer | number_format}}</p> -->
-    <p style="color:red" v-show="show">結果1:{{num2 | number_format}}</p>
+    <p style="color:red" v-show="show">結果1:{{num1 | number_format}}</p>
+    <p style="color:blue" v-show="show">結果2:{{num2 | number_format}}</p>
+    <p style="color:green" v-show="show">結果3:{{num3 | number_format}}</p>
+    <p style="color:orange" v-show="show">結果4:{{num4 | number_format}}</p>
+
 
     <p></p>
   </div>
@@ -23,7 +22,10 @@ export default {
   data (){
     return{
       answer: '',
+      num1:'',
       num2:'',
+      num3:'',
+      num4:'',
       show:false
     }
   },
@@ -32,14 +34,14 @@ export default {
       return value.toString().replace( /([0-9]+?)(?=(?:[0-9]{3})+$)/g,'$1,')
     }
   },
-  // computed:{
-  //   resultNum:function(){
-  //     return this.answer / 2
-  //   }
-  // },
   methods:{
     testNum:function(){
-        this.num2 = this.answer / 2
+      var val1 = this.answer / 0.84685 * 0.15315;
+      var val2 = val1 * 315/15315 - 0.5;
+        this.num1 = val1 + this.answer
+        this.num2 = val1 - val2
+        this.num3 = val2
+        this.num4 = val2 + this.num2
         this.show = true
     },
     clear:function(){
