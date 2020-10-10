@@ -22,6 +22,11 @@ const routes = [
     path: '/math',
     name: 'Math',
     component: () => import(/* webpackChunkName: "math" */ '../views/Math.vue')
+  },
+  {
+    path: '/math2',
+    name: 'Math2',
+    component: () => import(/* webpackChunkName: "math" */ '../views/Math2.vue')
   }
 
 ]
