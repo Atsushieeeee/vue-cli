@@ -6,9 +6,11 @@
     </form>
     <select v-model = "selected" name="" id="">
       <option disabled value="">選択してください</option>
-      <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
-        {{ option.name }}
-      </option>
+      <option value="Name1">Name1</option>
+      <option value="Name2">Name2</option>
+      <!-- <option v-for="option in options" v-bind:value="option.text" v-bind:key="option.id">
+        {{ option.text }}
+      </option> -->
     </select>
     <button class="mbtn" @click="testNum">計算</button>
     <button class="mbtn" @click="clear">クリア</button>
@@ -32,11 +34,11 @@ export default {
       num2:'',
       num3:'',
       num4:'',
-      selected:'',
-      options:[
-        {id:1, name:'Name1'},
-        {id:2, name:'Name2'}
-      ],
+      selected:'Name1',
+      // options:[
+      //   {text:'Name1', id:1},
+      //   {text:'Name2', id:2}
+      // ],
       show:false
     }
   },
@@ -47,14 +49,26 @@ export default {
   },
   methods:{
     testNum:function(){
-      var val1 = Math.floor(this.answer / 0.7958 * 0.2042)
-      var val2 = Math.ceil(val1 * 42/2042 - 0.5)
-        this.num1 = val1 + this.answer
-        this.num2 = val1 - val2
-        this.num3 = val2
-        this.num4 = val2 + this.num2
-        this.show = true
+      if(this.selected === 'Name1'){
+        var val1 = Math.floor(this.answer / 0.7958 * 0.2042)
+        var val2 = Math.ceil(val1 * 42/2042 - 0.5)
+          this.num1 = val1 + this.answer
+          this.num2 = val1 - val2
+          this.num3 = val2
+          this.num4 = val2 + this.num2
+          this.show = true
+      }else{
+        var val1 = Math.floor(this.answer / 0.84685 * 0.15315)
+        var val2 = Math.ceil(val1 * 21/1021 - 0.5)
+          this.num1 = val1 + this.answer
+          this.num2 = val1 - val2
+          this.num3 = val2
+          this.num4 = val2 + this.num2
+          this.show = true
+      }
     },
+    // testNum2:function(){
+    // },
     clear:function(){
       this.show = false
       this.answer = ''
