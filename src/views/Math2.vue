@@ -5,12 +5,12 @@
       <input type="tel" class="risoku" v-model.number="answer">
     </form>
     <select v-model = "selected" name="" id="">
-      <option disabled value="">選択してください</option>
-      <option value="Name1">Name1</option>
-      <option value="Name2">Name2</option>
-      <!-- <option v-for="option in options" v-bind:value="option.text" v-bind:key="option.id">
-        {{ option.text }}
-      </option> -->
+      <!-- <option disabled value="">選択してください</option> -->
+      <!-- <option value="Name1">Name1</option>
+      <option value="Name2">Name2</option> -->
+      <option v-for="option in options" v-bind:value="option.name" v-bind:key="option.id">
+        {{ option.name }}
+      </option>
     </select>
     <button class="mbtn" @click="testNum">計算</button>
     <button class="mbtn" @click="clear">クリア</button>
@@ -35,10 +35,10 @@ export default {
       num3:'',
       num4:'',
       selected:'Name1',
-      // options:[
-      //   {text:'Name1', id:1},
-      //   {text:'Name2', id:2}
-      // ],
+      options:[
+        {name:'Name1', id:1},
+        {name:'Name2', id:2}
+      ],
       show:false
     }
   },
