@@ -3,7 +3,7 @@
     <div class="header-body">
       <div class="header-title">
         <a href="">
-          <img src="" alt="">
+          <img class="header-logo" src="../assets/headerlogo.png" alt="">
         </a>
       </div>
       <nav class="header-menu">
@@ -24,11 +24,41 @@
         </div>
       </nav>
     </div>
-    Header TEST
   </header>
 </template>
 
 <style>
+  li{
+    list-style-type: none;
+  }
+
+  header{
+    width: 100vw;
+    /* height: 100px; */
+  }
+
+  .header-title{
+    width: 50vw;
+  }
+
+  .header-menu{
+    width: 50vw;
+  }
+  
+  .header-logo{
+    width: 250px;
+    height: 98px;
+  }
+
+  .header-body{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header-menu-list{
+    display: flex;
+    justify-content: space-between;
+  }
   
 
 </style>
