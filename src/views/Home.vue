@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <HelloNuxt/>
+    <Top/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloNuxt from '@/components/HelloNuxt.vue'
-
+import Top from '@/components/Top.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloNuxt
+    Top
   }
 }
 </script>
